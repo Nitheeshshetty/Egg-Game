@@ -470,33 +470,33 @@ default:exit(0);
 }
 glutPostRedisplay();
 }
+
 int main(int argc,char **argv)
 {
-printf("******************************************************************");
-printf("\n\t\t\t\t EGG GAME\n\n");
-printf("******************************************************************");
-printf("\n\tHow to Play..?\n\n <1>The objective of the game is to catch the eggs in the basket.\n\t To move Basket use mouse.\n");
-printf("\n <2> To Start, press key 's' or 'S' or \n\tClick Right mouse button then click 'Start Game'.\n");
-printf("\n <3> To Quit manually, press key 'q' or 'Q' or\n\t Click Right mouse button then click 'Quit'.\n");
-printf("\n\n RULES : If the player misses 10 eggs,then 'Game Over'.\n");
-printf("\nFor each level, speed is Increased\n\n");
-printf("\n\nBEST OF LUCK\n");
-
-glutInit(&argc,argv);
-glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGB);
-glutInitWindowSize(a,b);
-glutCreateWindow("EGG GAME");
-myinit();
-glutInitWindowPosition (100, 100);
-glutCreateMenu(menu);
-glutAddMenuEntry("Start game",1);
-glutAddMenuEntry("score",2);
-glutAddMenuEntry("Quit",3);
-glutAttachMenu(GLUT_RIGHT_BUTTON);
-glutDisplayFunc(display);
-glutKeyboardFunc(keys);
-glutPassiveMotionFunc(basket_set);
-glutIdleFunc(display);
-glutReshapeFunc(myReshape);
-glutMainLoop();
+   printf("******************************************************************");
+   printf("\n\t\t\t\t EGG GAME\n\n");
+   printf("******************************************************************");
+   printf("\n\tHow to Play..?\n\n <1>The objective of the game is to catch the eggs in the basket.\n\t To move Basket use mouse.\n");
+   printf("\n <2> To Start, press key 's' or 'S' or \n\tClick Right mouse button then click 'Start Game'.\n");
+   printf("\n <3> To Quit manually, press key 'q' or 'Q' or\n\t Click Right mouse button then click 'Quit'.\n");
+   printf("\n\n RULES : If the player misses 10 eggs,then 'Game Over'.\n");
+   printf("\nFor each level, speed is Increased\n\n");
+   printf("\n\nBEST OF LUCK\n");
+   glutInit(&argc,argv);
+   glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGB);
+   glutInitWindowSize(a,b);
+   glutCreateWindow("EGG GAME");
+   myinit();
+   glutInitWindowPosition (100, 100);
+   glutCreateMenu(menu);
+   glutAddMenuEntry("Start game",1);
+   glutAddMenuEntry("score",2);
+   glutAddMenuEntry("Quit",3);
+   glutAttachMenu(GLUT_RIGHT_BUTTON);
+   glutDisplayFunc(display);
+   glutKeyboardFunc(keys);
+   glutPassiveMotionFunc(basket_set);
+   glutIdleFunc(display);
+   glutReshapeFunc(myReshape);
+   glutMainLoop();
 }
