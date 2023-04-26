@@ -285,50 +285,46 @@ void duck(int i,int j)
 
 void print_score()
 {
-printf("\nLevel reached: %d\n\n",level_count);
-printf("\nNo. of eggs dropped= %d \n",dropped_eggs);
-printf("\nNo. of eggs caught = %d\n",eggs_caught);
-printf("\nNo. of eggs missed = %d\n",missed_eggs);
-
-getchar();
-exit(0);
+   printf("\nLevel reached: %d\n\n",level_count);
+   printf("\nNo. of eggs dropped= %d \n",dropped_eggs);
+   printf("\nNo. of eggs caught = %d\n",eggs_caught);
+   printf("\nNo. of eggs missed = %d\n",missed_eggs);
+   getchar();
+   exit(0);
 }
+
 void egg_start()
 {
-egg_yc=375;
-if(missed_eggs>=10)
-{
-printf("\n\n\t\t\t\tGAME OVER\n\n");
-print_score();
+   egg_yc=375;
+   if(missed_eggs>=10)
+   {
+      printf("\n\n\t\t\t\tGAME OVER\n\n");
+      print_score();
+   }
+   dropped_eggs++;
+   switch(rand()%9)
+   {
+      case 0:egg_xc=115; break;
+      case 1:egg_xc=255; break;
+      case 2:egg_xc=390; break;
+      case 5:egg_xc=115; break;
+      case 3:egg_xc=255; break;
+      case 4:egg_xc=390; break;
+      case 7:egg_xc=115; break;
+      case 6:egg_xc=255; break;
+      case 8:egg_xc=390; break;
+   }
 }
-dropped_eggs++;
-
-switch(rand()%9)
-{
-case 0:egg_xc=115; break;
-case 1:egg_xc=255; break;
-case 2:egg_xc=390; break;
-case 5:egg_xc=115; break;
-case 3:egg_xc=255; break;
-case 4:egg_xc=390; break;
-case 7:egg_xc=115; break;
-case 6:egg_xc=255; break;
-case 8:egg_xc=390; break;
-}
-}
-
-
-
 
 void score()
 {
-if(egg_yc<=50 && (egg_xc>=basket_x&&egg_xc<=basket_x+60))
-{
-printf("\a");
-eggs_caught++;
-egg_yc=-10;
-}
-missed_eggs=dropped_eggs-eggs_caught;
+   if(egg_yc<=50 && (egg_xc>=basket_x&&egg_xc<=basket_x+60))
+   {  
+      printf("\a");
+      eggs_caught++;
+      egg_yc=-10;
+   }
+   missed_eggs=dropped_eggs-eggs_caught;
 }
 
 void display(void)
