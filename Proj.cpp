@@ -237,50 +237,50 @@ void basket(int i,int j)
 
 void duck(int i,int j)
 {
-int h;
-glColor3f(1.0,1.0,0.0);
-glBegin(GL_POLYGON);
-glVertex2f(45+i,45+j);
-glVertex2f(70+i,20+j);
-glVertex2f(95+i,20+j);
-glVertex2f(120+i,45+j);
-glVertex2f(95+i,70+j);
-glVertex2f(70+i,70+j);
-glVertex2f(95+i,95+j);
-glVertex2f(82.5+i,107.5+j);
-glVertex2f(32.5+i,57.5+j);
-glEnd();
-glFlush();
-for(h=0;h<13;h+=4)
-{
-glBegin(GL_LINES);
-glColor3f(0.7,0.4,0);
-glVertex2f(57.5+h+i,52.5+h+j);
-glVertex2f(100+h+i,30+h+j);
-glEnd();
-glFlush();
-}
-glColor3f(0.0,1.0,0.0);
-glBegin(GL_POLYGON);
-glVertex2f(82.5+i,107.5+j);
-glVertex2f(65+i,107.5+j);
-glVertex2f(50+i,95+j);
-glVertex2f(70+i,95+j);
-glEnd();
-glFlush();
-glColor3f(0.0,0.0,0.0);
-glPointSize(5);
-glBegin(GL_POINTS);
-glVertex2f(76+i,101+j);
-glEnd();
-glColor3f(0.0,1.0,0.0);
-glBegin(GL_LINE_LOOP);
-glVertex2f(72.5+i,107.5+j);
-glVertex2f(67.5+i,112.5+j);
-glVertex2f(72.5+i,110+j);
-glVertex2f(77.5+i,112.5+j);
-glEnd();
-glFlush();
+   int h;
+   glColor3f(1.0,1.0,0.0);
+   glBegin(GL_POLYGON);
+   glVertex2f(45+i,45+j);
+   glVertex2f(70+i,20+j);
+   glVertex2f(95+i,20+j);
+   glVertex2f(120+i,45+j);
+   glVertex2f(95+i,70+j);
+   glVertex2f(70+i,70+j);
+   glVertex2f(95+i,95+j);
+   glVertex2f(82.5+i,107.5+j);
+   glVertex2f(32.5+i,57.5+j);
+   glEnd();
+   glFlush();
+   for(h=0;h<13;h+=4)
+   {
+      glBegin(GL_LINES);
+      glColor3f(0.7,0.4,0);
+      glVertex2f(57.5+h+i,52.5+h+j);
+      glVertex2f(100+h+i,30+h+j);
+      glEnd();
+      glFlush();
+   }
+   glColor3f(0.0,1.0,0.0);
+   glBegin(GL_POLYGON);
+   glVertex2f(82.5+i,107.5+j);
+   glVertex2f(65+i,107.5+j);
+   glVertex2f(50+i,95+j);
+   glVertex2f(70+i,95+j);
+   glEnd();
+   glFlush();
+   glColor3f(0.0,0.0,0.0);
+   glPointSize(5);
+   glBegin(GL_POINTS);
+   glVertex2f(76+i,101+j);
+   glEnd();
+   glColor3f(0.0,1.0,0.0);
+   glBegin(GL_LINE_LOOP);
+   glVertex2f(72.5+i,107.5+j);
+   glVertex2f(67.5+i,112.5+j);
+   glVertex2f(72.5+i,110+j);
+   glVertex2f(77.5+i,112.5+j);
+   glEnd();
+   glFlush();
 }
 
 void print_score()
