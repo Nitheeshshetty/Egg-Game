@@ -332,108 +332,105 @@ egg_yc=-10;
 }
 missed_eggs=dropped_eggs-eggs_caught;
 }
+
 void display(void)
 {
-glClear(GL_COLOR_BUFFER_BIT);
-ground(0 , 650);
-backk(0, 650);
-duck(40,375);
-duck(180,375);
-duck(320,375);
-sun();
-cloud1();
-cloud2();
-line(0,375);
+   glClear(GL_COLOR_BUFFER_BIT);
+   ground(0 , 650);
+   backk(0, 650);
+   duck(40,375);
+   duck(180,375);
+   duck(320,375);
+   sun();
+   cloud1();
+   cloud2();
+   line(0,375);
+   int i;
+   char z[12]="KhNishad";
+   char level1[12]="LEVEL 1";
+   char level2[12]="LEVEL 2";
+   char level3[12]="LEVEL 3";
+   char level4[12]="LEVEL 4";
+   if(s>=1)
+   {
+      glColor3f(0,0,1);
+      glRasterPos2i(10,10);
+      for(i=0;i<12;i++)
+         glutBitmapCharacter(GLUT_BITMAP_8_BY_13,z[i]);
+      if(level_count==1)
+      {
+         glColor3f(1,1,1);
+         glRasterPos2i(500,300);
+         for(i=0;i<12;i++)
+            glutBitmapCharacter(GLUT_BITMAP_8_BY_13,level1[i]);
+      }
+      else if(level_count==2)
+      {
+         glColor3f(1,0,0);
+         glRasterPos2i(500,300);
+         for(i=0;i<12;i++)
+            glutBitmapCharacter(GLUT_BITMAP_8_BY_13,level2[i]);
+      }
+      else if(level_count==3)
+      {
+         glColor3f(0,1,1);
+         glRasterPos2i(500,300);
+         for(i=0;i<12;i++)
+            glutBitmapCharacter(GLUT_BITMAP_8_BY_13,level3[i]);
+      }
+      if(level_count==4)
+      {
+         glColor3f(1,0,1);
+         glRasterPos2i(500,300);
+         for(i=0;i<12;i++)
+            glutBitmapCharacter(GLUT_BITMAP_8_BY_13,level4[i]);
+      }
+      if(egg_yc<=10)
+         egg_start();
+      egg();
+      basket(basket_x,basket_y);
+      if(eggs_caught>=10)
+      {
+         egg_yc-=speed_2;
+         level_count=2;
+      }
+      if(eggs_caught>=20)
+      {
+         egg_yc-=speed_3;
+         level_count=3;
+      }
+      if(eggs_caught>=30)
+      {
+         egg_yc-=speed_4;
+         level_count=4;
+      }
+      else
+         egg_yc-=speed_1;
+      score();
+  }
+   else
+   start_screen(40,300);
+   glFlush();
+   glutSwapBuffers();
+}
 
-int i;
-char z[12]="KhNishad";
-char level1[12]="LEVEL 1";
-char level2[12]="LEVEL 2";
-char level3[12]="LEVEL 3";
-char level4[12]="LEVEL 4";
-
-if(s>=1)
-{
-glColor3f(0,0,1);
-
-glRasterPos2i(10,10);
-for(i=0;i<12;i++)
-glutBitmapCharacter(GLUT_BITMAP_8_BY_13,z[i]);
-
-if(level_count==1)
-{
-glColor3f(1,1,1);
-glRasterPos2i(500,300);
-for(i=0;i<12;i++)
-glutBitmapCharacter(GLUT_BITMAP_8_BY_13,level1[i]);
-}
-else if(level_count==2)
-{
-glColor3f(1,0,0);
-glRasterPos2i(500,300);
-for(i=0;i<12;i++)
-glutBitmapCharacter(GLUT_BITMAP_8_BY_13,level2[i]);
-}
-else if(level_count==3)
-{
-glColor3f(0,1,1);
-glRasterPos2i(500,300);
-for(i=0;i<12;i++)
-glutBitmapCharacter(GLUT_BITMAP_8_BY_13,level3[i]);
-}
-if(level_count==4)
-{
-glColor3f(1,0,1);
-glRasterPos2i(500,300);
-for(i=0;i<12;i++)
-glutBitmapCharacter(GLUT_BITMAP_8_BY_13,level4[i]);
-}
-
-if(egg_yc<=10)
-egg_start();
-
-egg();
-basket(basket_x,basket_y);
-if(eggs_caught>=10)
-{
-egg_yc-=speed_2;
-level_count=2;
-}
-if(eggs_caught>=20)
-{
-egg_yc-=speed_3;
-level_count=3;
-}
-if(eggs_caught>=30)
-{
-egg_yc-=speed_4;
-level_count=4;
-}
-else
-egg_yc-=speed_1;
-score();
-}
-else
-start_screen(40,300);
-glFlush();
-glutSwapBuffers();
-}
 void basket_set(int a,int b)
 {
-basket_x=a;
-basket_y=b;
-glutPostRedisplay();
+   basket_x=a;
+   basket_y=b;
+   glutPostRedisplay();
 }
+
 void myReshape(int w,int h)
 {
-glMatrixMode(GL_PROJECTION);
-glLoadIdentity();
-gluOrtho2D(0.0,(GLdouble)w,0.0,(GLdouble)h);
-glMatrixMode(GL_MODELVIEW);
-glLoadIdentity();
-glViewport(0,0,w,h);
-a=w;
-b=h;
+   glMatrixMode(GL_PROJECTION);
+   glLoadIdentity();
+   gluOrtho2D(0.0,(GLdouble)w,0.0,(GLdouble)h);
+   glMatrixMode(GL_MODELVIEW);
+   glLoadIdentity();
+   glViewport(0,0,w,h);
+   a=w;
+   b=h;
 }
 
 void keys(unsigned char key,int x,int y)
