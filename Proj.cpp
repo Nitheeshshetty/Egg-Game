@@ -435,26 +435,28 @@ glViewport(0,0,w,h);
 a=w;
 b=h;
 }
+
 void keys(unsigned char key,int x,int y)
 {
-if(key=='q'||key=='Q')
-{
-printf("\n\n\n\t\tQUIT BY PLAYER\n\n");
-print_score();
-}
-if(key=='s'||key=='S') s+=1;
-
-if(key=='a'||key=='A')
-{
-egg_xc-=10;
-if(egg_xc<=0) egg_xc=10;
-}
-if(key=='d'||key=='D')
-{
-egg_xc+=10;
-if(egg_xc>=500) egg_xc=490;
-}
-
+   if(key=='q'||key=='Q')
+   {
+      printf("\n\n\n\t\tQUIT BY PLAYER\n\n");
+      print_score();
+   }
+   if(key=='s'||key=='S') 
+      s+=1;
+   if(key=='a'||key=='A')
+   {
+      egg_xc-=10;
+      if(egg_xc<=0) 
+         egg_xc=10;
+   }
+   if(key=='d'||key=='D')
+   {
+      egg_xc+=10;
+      if(egg_xc>=500) 
+         egg_xc=490;
+   }
 }
 
 void menu(int id)
