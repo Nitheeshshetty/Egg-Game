@@ -172,43 +172,37 @@ void cloud2()
 
 void line(int i , int j)
 {
-
-glBegin(GL_QUADS);
- glColor3f(1.0,.5,0.5);
-glVertex2f(0.0+i,10.0+j);
-glVertex2f(0.0+i,15.0+j);
-glVertex2f(600.0+i,15.0+j);
-glVertex2f(600.0+i,10.0+j);
-glEnd();
-glFlush();
+   glBegin(GL_QUADS);
+   glColor3f(1.0,.5,0.5);
+   glVertex2f(0.0+i,10.0+j);
+   glVertex2f(0.0+i,15.0+j);
+   glVertex2f(600.0+i,15.0+j);
+   glVertex2f(600.0+i,10.0+j);
+   glEnd();
+   glFlush();
 }
-
 
 void backk(int i , int j)
 {
-
-
-glColor3f(0, .5, 1);
-glBegin(GL_QUADS);
-glVertex2f(0.0+i,0.0+j);
-glVertex2f(600.0+i, 0.0+j);
-glVertex2f(600.0+i,-500+j);
-glVertex2f(0.0+i,-500+j);
-glEnd();
-glFlush();
-
-
+   glColor3f(0, .5, 1);
+   glBegin(GL_QUADS);
+   glVertex2f(0.0+i,0.0+j);
+   glVertex2f(600.0+i, 0.0+j);
+   glVertex2f(600.0+i,-500+j);
+   glVertex2f(0.0+i,-500+j);
+   glEnd();
+   glFlush();
 }
+
 void ground(int i , int j)
 {
-
-glBegin(GL_QUADS);
-glColor3f(0,1.0,0);
-glVertex2f(0.0+i,0.0+j);
-glVertex2f(600.0+i, 0.0+j);
-glVertex2f(600.0+i,-j);
-glVertex2f(0.0+i,-j);
-glEnd();
+   glBegin(GL_QUADS);
+   glColor3f(0,1.0,0);
+   glVertex2f(0.0+i,0.0+j);
+   glVertex2f(600.0+i, 0.0+j);
+   glVertex2f(600.0+i,-j);
+   glVertex2f(0.0+i,-j);
+   glEnd();
 }
 
 
