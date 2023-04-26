@@ -456,19 +456,20 @@ if(egg_xc>=500) egg_xc=490;
 }
 
 }
+
 void menu(int id)
 {
-switch(id)
-{
-case 1: s+=1;
-break;
-case 2:print_score();
-break;
-case 3: printf("\n\n\n\t\tQUIT BY PLAYER\n");
-break;
-default:exit(0);
-}
-glutPostRedisplay();
+   switch(id)
+   {
+      case 1: s+=1;
+         break;
+      case 2:print_score();
+         break;
+      case 3: printf("\n\n\n\t\tQUIT BY PLAYER\n");
+         break;
+      default:exit(0);
+   }
+   glutPostRedisplay();
 }
 
 int main(int argc,char **argv)
