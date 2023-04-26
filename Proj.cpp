@@ -130,54 +130,45 @@ void cloud1()
 
 void cloud2()
 {
-    float theta;
-    glLineWidth(1.5);
-glColor3f(1,1,1);
-glBegin(GL_POLYGON);
-for (int i = 0; i <360 ; i++)
-{
-theta  = i*PI*i/180;
-glVertex2f(420+45*cos(theta)/2, 540+45*sin(theta)/2);
-}
-
-glEnd();
-
+   float theta;
    glLineWidth(1.5);
-glColor3f(1,1,1);
-glBegin(GL_POLYGON);
-for (int i = 0; i <360 ; i++)
-{
-theta  = i*PI*i/180;
-glVertex2f(455+45*cos(theta)/2, 550+45*sin(theta)/2);
-}
-
-glEnd();
-
+   glColor3f(1,1,1);
+   glBegin(GL_POLYGON);
+   for (int i = 0; i <360 ; i++)
+   {
+      theta  = i*PI*i/180;
+      glVertex2f(420+45*cos(theta)/2, 540+45*sin(theta)/2);
+   }
+   glEnd();
    glLineWidth(1.5);
-glColor3f(1,1,1);
-glBegin(GL_POLYGON);
-for (int i = 0; i <360 ; i++)
-{
-theta  = i*PI*i/180;
-glVertex2f(455+45*cos(theta)/2, 530+45*sin(theta)/2);
-}
-
-glEnd();
-
+   glColor3f(1,1,1);
+   glBegin(GL_POLYGON);
+   for (int i = 0; i <360 ; i++)
+   {
+      theta  = i*PI*i/180;
+      glVertex2f(455+45*cos(theta)/2, 550+45*sin(theta)/2);
+   }
+   glEnd();
    glLineWidth(1.5);
-glColor3f(1,1,1);
-glBegin(GL_POLYGON);
-for (int i = 0; i <360 ; i++)
-{
-theta  = i*PI*i/180;
-glVertex2f(490+45*cos(theta)/2, 540+45*sin(theta)/2);
+   glColor3f(1,1,1);
+   glBegin(GL_POLYGON);
+   for (int i = 0; i <360 ; i++)
+   {
+      theta  = i*PI*i/180;
+      glVertex2f(455+45*cos(theta)/2, 530+45*sin(theta)/2);
+   }
+   glEnd();
+   glLineWidth(1.5);
+   glColor3f(1,1,1);
+   glBegin(GL_POLYGON);
+   for (int i = 0; i <360 ; i++)
+   {
+      theta  = i*PI*i/180;
+      glVertex2f(490+45*cos(theta)/2, 540+45*sin(theta)/2);
+   }
+   glEnd();
+   glFlush();
 }
-
-glEnd();
-glFlush();
-
-}
-
 
 void line(int i , int j)
 {
